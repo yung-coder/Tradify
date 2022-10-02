@@ -10,7 +10,7 @@ const AppContext = ({children}) => {
     useEffect(() => {
        if(currency === "INR") setsymbol("₹")
        else if(currency === "USD") setsymbol("$")
-    }, [])
+    }, [currency])
     
   return (
      <Crypto.Provider value={{currency,symbol , setcurrency}}>
