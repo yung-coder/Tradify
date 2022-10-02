@@ -1,4 +1,5 @@
 import axios from "axios";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { CryptoState } from "../AppContext";
 import { CoinList } from "../utils/endpoints";
@@ -33,7 +34,7 @@ const Cointable = () => {
     fetchCoins();
   }, [currency]);
 
-  console.log(coins);
+  // console.log(coins);
 
   return (
     <>
@@ -66,26 +67,28 @@ const Cointable = () => {
             {handleSearch().map((coin) => {
               const profit = coin.price_change_percentage_24h > 0;
               return (
-                <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                  <th
-                    scope="row"
-                    class=" font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                  >
-                    <img src={coin.image} alt="" className="h-7 w-7 " />
-                  </th>
-                  <td class="py-4 px-6">{coin.name}</td>
-                  <td class="py-4 px-6">
-                    {numberWithCommas(coin.current_price.toFixed(2))}
-                    {symbol}
-                  </td>
-                  <td class="py-4 px-6">
-                    {profit && "+"}{" "}
-                    {coin.price_change_percentage_24h.toFixed(2)}%{symbol}
-                  </td>
-                  <td class="py-4 px-6">
-                    {coin.market_cap.toString().slice(0, -6)} {symbol}
-                  </td>
-                </tr>
+                <Link href={`/coin/${coin.id}`} >
+                  <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                    <th
+                      scope="row"
+                      class=" font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      <img src={coin.image} alt="" className="h-7 w-7 " />
+                    </th>
+                    <td class="py-4 px-6">{coin.name}</td>
+                    <td class="py-4 px-6">
+                      {numberWithCommas(coin.current_price.toFixed(2))}
+                      {symbol}
+                    </td>
+                    <td class="py-4 px-6">
+                      {profit && "+"}{" "}
+                      {coin.price_change_percentage_24h.toFixed(2)}%{symbol}
+                    </td>
+                    <td class="py-4 px-6">
+                      {coin.market_cap.toString().slice(0, -6)} {symbol}
+                    </td>
+                  </tr>
+                </Link>
               );
             })}
           </tbody>
