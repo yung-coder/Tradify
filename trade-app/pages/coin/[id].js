@@ -5,6 +5,7 @@ import { CryptoState } from "../../AppContext";
 import { SingleCoin } from "../../utils/endpoints";
 import ReactHtmlParser from "react-html-parser";
 import { numberWithCommas } from "../../components/Cointable";
+import Coininfo from "../../components/Coininfo";
 const Post = () => {
   //   const router = useRouter()
   //   const { slug } = router.query
@@ -71,6 +72,7 @@ const Post = () => {
       </div>
 
       {/* chart */}
+      <Coininfo coin={coin}/>
     </div>
   );
 };
