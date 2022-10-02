@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import { CryptoState } from "../AppContext";
 
 const Dropdown = () => {
   const [drop, setdrop] = useState(false);
+  const {currency , setcurrency} = CryptoState()
+
+  console.log(currency);
   return (
     <nav class="p-4  bg-black md:p-2">
       <div class="container flex  justify-end items-end">
@@ -46,35 +50,21 @@ const Dropdown = () => {
                     <a
                       href="#"
                       class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      onClick={() => setcurrency("USD")}
                     >
-                      Dashboard
+                      USD
                     </a>
                   </li>
                   <li>
                     <a
                       href="#"
                       class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      onClick={() => setcurrency("INR")}
                     >
-                      Settings
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Earnings
+                      INR
                     </a>
                   </li>
                 </ul>
-                <div class="py-1">
-                  <a
-                    href="#"
-                    class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
-                  >
-                    Sign out
-                  </a>
-                </div>
               </div>
             </li>
           </ul>
