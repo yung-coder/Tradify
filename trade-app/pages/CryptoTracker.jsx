@@ -6,7 +6,7 @@ const CryptoTracker = () => {
   return (
     <div className="flex flex-col">
       <div className="w-full h-[400px]">
-        <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500  border h-full  ">
+        <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 h-full  ">
           <Carousel />
         </div>
       </div>
