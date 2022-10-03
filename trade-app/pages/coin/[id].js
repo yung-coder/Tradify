@@ -29,50 +29,48 @@ const Post = () => {
     return <p>Loading...</p>;
   }
   return (
-    <div className="flex flex-col items-center md:flex-row space-y-5 justify-center">
-      <div className="flex flex-col justify-center items-center space-y-3">
-        <div className="flex flex-col justify-between items-center space-y-4">
-          <img src={coin?.image.large} alt="" />
-          <h1 className="text-4xl font-bold">{coin?.name}</h1>
-        </div>
-
-        <div className="break-before-all text-left font-semibold w-[600px] mt-5">
-          {ReactHtmlParser(coin?.description.en.split(". ")[0])}.
-        </div>
-
-        <div className="w-full">
-          <div className="flex-col justify-center items-center">
-            <div className="flex space-x-2">
-              <h1 className="font-bold">RANK:</h1>
-              <span className="font-medium">{coin?.market_cap_rank}</span>
+    <div>
+      <div className="flex flex-col space-y-14">
+        <div className="flex flex-col justify-center space-y-5">
+          <div className="flex flex-col justify-center items-center space-y-5">
+            <div>
+              <img src={coin?.image.large} alt="" />
             </div>
-            <div className="flex space-x-2">
-              <h1  className="font-bold">CURRENT PRICE:</h1>
-              <span className="font-medium"> 
-                {symbol}{" "}
+            <div className="flex flex-col text-center space-y-2">
+              <h1 className="text-3xl font-bold">{coin?.name}</h1>
+              <div className="text-center w-fit font-semibold break-words">
+                <p>{ReactHtmlParser(coin?.description.en.split(". ")[0])}.</p>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center items-center">
+            <div className="flex space-x-2 text-lg font-bold">
+              <h1>RANK:</h1>
+              <p>{coin?.market_cap_rank}</p>
+            </div>
+            <div className="flex space-x-2 text-lg font-bold">
+              <h1>CURRENT PRICE:</h1>
+              <p>{symbol}
                 {numberWithCommas(
                   coin?.market_data.current_price[currency.toLowerCase()]
-                )}
-              </span>
+                )}</p>
             </div>
-            <div className="flex space-x-2">
-              <h1 className="font-bold">MARKET CAP:</h1>
-              <span className="font-medium">
-                {symbol}{" "}
+            <div className="flex space-x-2 text-lg font-bold">
+              <h1>MARKET CAP:</h1>
+              <p>{symbol}
                 {numberWithCommas(
                   coin?.market_data.market_cap[currency.toLowerCase()]
                     .toString()
                     .slice(0, -6)
                 )}
-                M
-              </span>
+                M</p>
             </div>
           </div>
         </div>
+        <div className="">
+          <Coininfo coin={coin}/>
+        </div>
       </div>
-
-      {/* chart */}
-      <Coininfo coin={coin}/>
     </div>
   );
 };

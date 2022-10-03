@@ -28,7 +28,7 @@ const Coininfo = ({ coin }) => {
         <p>loading..</p>
       ) : (
         <>
-          <div className="w-[600px]">
+          <div className="w-[400px] ">
             <Line
               data={{
                 labels: historicalData.map((coin) => {
@@ -58,7 +58,7 @@ const Coininfo = ({ coin }) => {
               }}
             />
           </div>
-          <div className="flex space-x-6">
+          <div className="space-x-6">
             {chartDays.map((day) => (
               <button
                 key={day.value}

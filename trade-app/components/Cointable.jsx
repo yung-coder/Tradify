@@ -83,11 +83,11 @@ const Cointable = () => {
                       {symbol}
                     </td>
                     <td class={`py-4 px-6 ${profit ? 'text-green-600' : 'text-red-600'} md:text-lg`}>
-                      {profit && "+"}{" "}
+                      {profit && "+"}
                       {coin.price_change_percentage_24h.toFixed(2)}%{symbol}
                     </td>
                     <td class="py-4 px-6 md:text-lg">
-                      {coin.market_cap.toString().slice(0, -6)} {symbol}
+                      {coin.market_cap.toString().slice(0, -6)}{symbol}
                     </td>
                   </tr>
                 </Link>
