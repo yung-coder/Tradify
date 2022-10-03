@@ -28,7 +28,7 @@ const Coininfo = ({ coin }) => {
         <p>loading..</p>
       ) : (
         <>
-          <div className="w-[400px] ">
+          <div className="w-[400px] md:w-[1000px]">
             <Line
               data={{
                 labels: historicalData.map((coin) => {
