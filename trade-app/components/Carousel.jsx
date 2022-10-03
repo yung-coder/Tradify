@@ -29,27 +29,42 @@ const Carousel = () => {
       <>
         <Link href={`/coin/${coin.id}`} key={coin.id}>
           <div>
-            <img src={coin?.image} alt={coin.name} height="80" />
-            <span>
-              {coin?.symbol}
-              &nbsp;
-              <span>
+            <div className="flex flex-col justify-center items-center space-y-7">
+              <div>
+              <img src={coin?.image} alt={coin.name} className="h-28" />
+              </div>
+              <h1>
+                {coin?.symbol}
+                &nbsp;
+              </h1>
+              <h1>
+                {" "}
                 {profit && "+"}
                 {coin?.price_change_percentage_24h?.toFixed(2)}%
-              </span>
-            </span>
-            <span>
-              {symbol} {numberWithCommas(coin?.current_price.toFixed(2))}
-            </span>
+              </h1>
+              <h1>
+                {symbol} {numberWithCommas(coin?.current_price.toFixed(2))}
+              </h1>
+            </div>
           </div>
         </Link>
       </>
     );
   });
 
+  const responsive = {
+    0: {
+      items: 2,
+    },
+    512: {
+      items: 4,
+    },
+  };
+
   return (
-    <div>
+    <div className=" border p-9">
       <AliceCarousel
+        autoHeight
         mouseTracking
         infinite
         autoPlayInterval={1000}
@@ -57,7 +72,9 @@ const Carousel = () => {
         disableDotsControls
         disableButtonsControls
         items={items}
+        responsive={responsive}
         autoPlay
+        className="h-48 w-48"
       />
     </div>
   );
