@@ -62,7 +62,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className=" border p-9">
+    <div className="  p-9">
       <AliceCarousel
         autoHeight
         mouseTracking

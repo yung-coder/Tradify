@@ -38,13 +38,15 @@ const Cointable = () => {
 
   return (
     <>
-      <div>
-        <h1>Coin Detalis</h1>
-        <input type="text" onChange={(e) => setSearch(e.target.value)} />
+      <div className="flex flex-col justify-center items-center space-y-7 bg-gray-600 h-[200px]">
+        <div className="flex justify-center items-center font-bold">
+           <h1 className="text-2xl font-bold ">Coins Listed</h1>
+        </div>
+        <input type="text" onChange={(e) => setSearch(e.target.value)}  class="bg-green-500 text-white rounded-md outline-none p-1 placeholder:text-white" placeholder="enter the coin name"/>
       </div>
-      <div class="overflow-x-auto shadow-md  md:w-full">
-        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <div class="overflow-x-auto shadow-md  md:w-full ">
+        <table class="w-full text-sm text-left  ">
+          <thead class="text-xs  uppercase bg-black text-white md:text-lg">
             <tr>
               <th scope="col" class="py-3 px-6">
                 Coin img
@@ -68,23 +70,23 @@ const Cointable = () => {
               const profit = coin.price_change_percentage_24h > 0;
               return (
                 <Link href={`/coin/${coin.id}`} >
-                  <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                  <tr class="bg-slate-300 border-b  dark:border-gray-700 cursor-pointer">
                     <th
                       scope="row"
                       class=" font-medium text-gray-900 whitespace-nowrap dark:text-white"
                     >
-                      <img src={coin.image} alt="" className="h-7 w-7 " />
+                      <img src={coin.image} alt="" className="h-7 w-7 ml-5 md:h-9 md:w-9" />
                     </th>
-                    <td class="py-4 px-6">{coin.name}</td>
-                    <td class="py-4 px-6">
+                    <td class="py-4 px-6 md:text-lg">{coin.name}</td>
+                    <td class="py-4 px-6 md:text-lg">
                       {numberWithCommas(coin.current_price.toFixed(2))}
                       {symbol}
                     </td>
-                    <td class="py-4 px-6">
+                    <td class={`py-4 px-6 ${profit ? 'text-green-600' : 'text-red-600'} md:text-lg`}>
                       {profit && "+"}{" "}
                       {coin.price_change_percentage_24h.toFixed(2)}%{symbol}
                     </td>
-                    <td class="py-4 px-6">
+                    <td class="py-4 px-6 md:text-lg">
                       {coin.market_cap.toString().slice(0, -6)} {symbol}
                     </td>
                   </tr>
