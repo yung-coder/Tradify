@@ -23,54 +23,56 @@ const Coininfo = ({ coin }) => {
   }, [currency, days]);
 
   return (
-    <div>
+    <div className="flex flex-col justify-center items-center w-full space-y-3">
       {!historicalData ? (
         <p>loading..</p>
       ) : (
         <>
-          <Line
-            data={{
-              labels: historicalData.map((coin) => {
-                let date = new Date(coin[0]);
-                let time =
-                  date.getHours() > 12
-                    ? `${date.getHours() - 12}: ${date.getMinutes()} PM`
-                    : `${date.getHours()}:${date.getMinutes()} AM`;
+          <div className="w-[600px]">
+            <Line
+              data={{
+                labels: historicalData.map((coin) => {
+                  let date = new Date(coin[0]);
+                  let time =
+                    date.getHours() > 12
+                      ? `${date.getHours() - 12}: ${date.getMinutes()} PM`
+                      : `${date.getHours()}:${date.getMinutes()} AM`;
 
-                return days == 1 ? time : date.toLocaleString();
-              }),
+                  return days == 1 ? time : date.toLocaleString();
+                }),
 
-              datasets: [
-                {
-                  data: historicalData.map((coin) => coin[1]),
-                  label: `Price( Past ${days} days) in ${currency}`,
-                  borderColor: "gold",
+                datasets: [
+                  {
+                    data: historicalData.map((coin) => coin[1]),
+                    label: `Price( Past ${days} days) in ${currency}`,
+                    borderColor: "gold",
+                  },
+                ],
+              }}
+              options={{
+                elements: {
+                  point: {
+                    radius: 1,
+                  },
                 },
-              ],
-            }}
-            options={{
-              elements: {
-                point: {
-                  radius: 1,
-                },
-              },
-            }}
-          />
-           <div
-              
-            >
-              {chartDays.map((day) => (
-                <button
-                  key={day.value}
-                  onClick={() => {setdays(day.value);
-                    // setflag(false);
-                  }}
-                  selected={day.value === days}
-                >
-                  {day.label}
-                </button>
-              ))}
-            </div>
+              }}
+            />
+          </div>
+          <div className="flex space-x-6">
+            {chartDays.map((day) => (
+              <button
+                key={day.value}
+                onClick={() => {
+                  setdays(day.value);
+                  // setflag(false);
+                }}
+                selected={day.value === days}
+                className="bg-orange-500 p-1  rounded-lg"
+              >
+                {day.label}
+              </button>
+            ))}
+          </div>
         </>
       )}
     </div>

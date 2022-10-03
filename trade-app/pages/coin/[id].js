@@ -29,26 +29,26 @@ const Post = () => {
     return <p>Loading...</p>;
   }
   return (
-    <div className="flex flex-col items-center md:flex-row">
-      <div>
-        <div className="flex flex-col justify-between items-center">
+    <div className="flex flex-col items-center md:flex-row space-y-5 justify-center">
+      <div className="flex flex-col justify-center items-center space-y-3">
+        <div className="flex flex-col justify-between items-center space-y-4">
           <img src={coin?.image.large} alt="" />
           <h1 className="text-4xl font-bold">{coin?.name}</h1>
         </div>
 
-        <div className="break-words font-semibold ">
+        <div className="break-before-all text-left font-semibold w-[600px] mt-5">
           {ReactHtmlParser(coin?.description.en.split(". ")[0])}.
         </div>
 
-        <div>
-          <div className="flex-col justify-between">
+        <div className="w-full">
+          <div className="flex-col justify-center items-center">
             <div className="flex space-x-2">
-              <h1>RANK</h1>
-              <span>{coin?.market_cap_rank}</span>
+              <h1 className="font-bold">RANK:</h1>
+              <span className="font-medium">{coin?.market_cap_rank}</span>
             </div>
             <div className="flex space-x-2">
-              <h1>CURRENT PRICE</h1>
-              <span>
+              <h1  className="font-bold">CURRENT PRICE:</h1>
+              <span className="font-medium"> 
                 {symbol}{" "}
                 {numberWithCommas(
                   coin?.market_data.current_price[currency.toLowerCase()]
@@ -56,8 +56,8 @@ const Post = () => {
               </span>
             </div>
             <div className="flex space-x-2">
-              <h1>MARKET CAP</h1>
-              <span>
+              <h1 className="font-bold">MARKET CAP:</h1>
+              <span className="font-medium">
                 {symbol}{" "}
                 {numberWithCommas(
                   coin?.market_data.market_cap[currency.toLowerCase()]
