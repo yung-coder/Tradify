@@ -4,7 +4,7 @@ import { CryptoState } from "../AppContext";
 const Newscard = ({title , desc , link}) => {
   return (
     <div>
-      <div class="p-5 max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+      <div class="p-5 max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 md:max-w-lg">
         <a href="#">
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {title}
