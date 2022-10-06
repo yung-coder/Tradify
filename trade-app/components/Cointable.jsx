@@ -38,7 +38,7 @@ const Cointable = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center space-y-7 bg-gray-600 h-[200px]">
+      <div className="flex flex-col justify-center items-center space-y-7 bg-[#004022] h-[200px] text-[#c3f53c]">
         <div className="flex justify-center items-center font-bold">
            <h1 className="text-2xl font-bold ">Coins Listed</h1>
         </div>
@@ -70,10 +70,10 @@ const Cointable = () => {
               const profit = coin.price_change_percentage_24h > 0;
               return (
                 <Link href={`/coin/${coin.id}`} >
-                  <tr class="bg-slate-300 border-b  dark:border-gray-700 cursor-pointer">
+                  <tr class="border-b-slate-50  cursor-pointer bg-[#0E0C0A]  text-white">
                     <th
                       scope="row"
-                      class=" font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                      class=" font-medium  whitespace-nowrap "
                     >
                       <img src={coin.image} alt="" className="h-7 w-7 ml-5 md:h-9 md:w-9" />
                     </th>
