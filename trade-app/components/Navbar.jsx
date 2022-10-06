@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Link from 'next/link';
 const Navbar = () => {
   const [drop, setdrop] = useState(false);
   return (
@@ -96,32 +96,19 @@ const Navbar = () => {
               md:pt-0"
           >
             <li>
-              <a class="md:p-4 py-2 block hover:text-purple-400" href="#">
-                Features
-              </a>
+              <Link class="md:p-4 py-2 block hover:text-purple-400" href='/CryptoTracker'>
+                Crypto
+              </Link>
             </li>
             <li>
-              <a class="md:p-4 py-2 block hover:text-purple-400" href="#">
-                Pricing
-              </a>
+              <Link class="md:p-4 py-2 block hover:text-purple-400" href="/News">
+                News
+              </Link>
             </li>
             <li>
-              <a class="md:p-4 py-2 block hover:text-purple-400" href="#">
-                Customers
-              </a>
-            </li>
-            <li>
-              <a class="md:p-4 py-2 block hover:text-purple-400" href="#">
-                Blog
-              </a>
-            </li>
-            <li>
-              <a
-                class="md:p-4 py-2 block hover:text-purple-400 text-purple-500"
-                href="#"
-              >
-                Sign Up
-              </a>
+              <Link class="md:p-4 py-2 block hover:text-purple-400" href="/stocks">
+                Stocks
+              </Link>
             </li>
           </ul>
         </div>
