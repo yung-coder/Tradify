@@ -7,6 +7,7 @@ const AppContext = ({children}) => {
     const [currency,setcurrency] = useState("INR");
     const [symbol,setsymbol] = useState("₹");
     const [News, setNews] = useState([]);
+    const [stock,setstocks] = useState([]);
 
     useEffect(() => {
        if(currency === "INR") setsymbol("₹")
@@ -27,9 +28,17 @@ const AppContext = ({children}) => {
           setNews(response.data.results);
        })
     }
+
+    const ListStocks =() =>{
+      axios(`https://financialmodelingprep.com/api/v3/stock_market/gainers?apikey=90171db29ef4387ad340b2f435c8325b`, {
+      }).then(response => {
+         console.log(response.data);
+         setstocks(response.data);
+      })
+    }
     
   return (
-     <Crypto.Provider value={{currency,symbol , setcurrency , getCryptoNews , News , getStocknews }}>
+     <Crypto.Provider value={{currency,symbol , setcurrency , getCryptoNews , News , getStocknews ,ListStocks,stock,  setstocks}}>
         {children}
      </Crypto.Provider>
   )

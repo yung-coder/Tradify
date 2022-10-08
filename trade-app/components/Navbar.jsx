@@ -106,7 +106,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link class="md:p-4 py-2 block hover:text-purple-400" href="/stocks">
+              <Link class="md:p-4 py-2 block hover:text-purple-400" href="/Stocks">
                 Stocks
               </Link>
             </li>
