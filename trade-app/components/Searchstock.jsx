@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { CryptoState } from "../AppContext";
 
-const Stocktable = () => {
-  const { stock } = CryptoState();
+const Searchstock = () => {
+  const {
+    searchres
+  } = CryptoState();
   return (
     <div>
       <div class="overflow-x-auto relative">
@@ -16,15 +18,15 @@ const Stocktable = () => {
                 Name
               </th>
               <th scope="col" class="py-3 px-6">
-                Price
+                Exchange
               </th>
               <th scope="col" class="py-3 px-6">
-                Change
+                Currency
               </th>
             </tr>
           </thead>
           <tbody>
-            {stock.map((info) => {
+            {searchres.map((info) => {
               return (
                 <tr class="bg-white dark:bg-gray-800">
                   <th
@@ -34,8 +36,8 @@ const Stocktable = () => {
                     {info.symbol}
                   </th>
                   <td class="py-4 px-6">{info.name}</td>
-                  <td class="py-4 px-6">{info.price}</td>
-                  <td class="py-4 px-6">{info.change}</td>
+                  <td class="py-4 px-6">{info.stockExchange}</td>
+                  <td class="py-4 px-6">{info.currency}</td>
                 </tr>
               );
             })}
@@ -46,4 +48,4 @@ const Stocktable = () => {
   );
 };
 
-export default Stocktable;
+export default Searchstock;
