@@ -8,7 +8,7 @@ const Post = () => {
   const [details, setdetails] = useState([]);
   const Coininfo = () => {
     axios(
-      `https://financialmodelingprep.com/api/v3/profile/${query.id}?apikey=90171db29ef4387ad340b2f435c8325b`
+      `https://financialmodelingprep.com/api/v3/profile/${query.id}?apikey=4a7093567c38b37f29104d8be6b7f90b`
     ).then((response) => {
       console.log(response.data);
       setdetails(response.data);
@@ -23,7 +23,7 @@ const Post = () => {
     <div>
       {details.map((item) => {
         return (
-          <div>
+          <div key={item.symbol}>
             <div>
               <img src={item.image} alt="" />
                <h1>{item.sector}</h1>

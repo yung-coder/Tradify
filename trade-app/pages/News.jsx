@@ -21,7 +21,7 @@ const News = () => {
          flex-col justify-center items-center mt-16 space-y-14">
             {News.map((cont)=>{
                 return (
-                    <Newscard title={cont.title} desc={cont.description} link={cont.link}/>
+                    <Newscard title={cont.title} desc={cont.description} link={cont.link} key={cont.title}/>
                 )
             })}
         </div>

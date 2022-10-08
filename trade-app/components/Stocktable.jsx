@@ -29,7 +29,7 @@ const Stocktable = () => {
           <tbody>
             {stock.map((info) => {
               return (
-                <Link href={`/stock/${info.symbol}`}>
+                <Link href={`/stock/${info.symbol}`} key={info.symbol}>
                   <tr className="bg-white dark:bg-gray-800">
                     <th
                       scope="row"

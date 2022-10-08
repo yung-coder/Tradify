@@ -69,7 +69,7 @@ const Cointable = () => {
             {handleSearch().map((coin) => {
               const profit = coin.price_change_percentage_24h > 0;
               return (
-                <Link href={`/coin/${coin.id}`} >
+                <Link href={`/coin/${coin.id}`} key={coin.id}>
                   <tr className="border-b-slate-50  cursor-pointer bg-[#0E0C0A]  text-white">
                     <th
                       scope="row"
