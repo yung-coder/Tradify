@@ -7,22 +7,22 @@ const Dropdown = () => {
 
   console.log(currency);
   return (
-    <nav class="p-4  bg-black md:p-2">
-      <div class="container flex  justify-end items-end">
-        <div class="w-full md:block md:w-auto" id="mobile-menu">
-          <ul class="flex flex-col  rounded-lg  md:flex-row md:mt-0 md:text-sm md:font-medium ">
+    <nav className="p-4  bg-black md:p-2">
+      <div className="container flex  justify-end items-end">
+        <div className="w-full md:block md:w-auto" id="mobile-menu">
+          <ul className="flex flex-col  rounded-lg  md:flex-row md:mt-0 md:text-sm md:font-medium ">
             <li>
               <button
                 id="dropdownNavbarLink"
                 data-dropdown-toggle="dropdownNavbar"
-                class="flex justify-between items-center rounded bg-transparent text-white"
+                className="flex justify-between items-center rounded bg-transparent text-white"
                 onClick={() => {
                   setdrop(!drop);
                 }}
               >
                 Dropdown{" "}
                 <svg
-                  class="ml-1 w-5 h-5"
+                  className="ml-1 w-5 h-5"
                   aria-hidden="true"
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -38,18 +38,18 @@ const Dropdown = () => {
 
               <div
                 id="dropdownNavbar"
-                class={`${
+                className={`${
                   drop ? "block" : "hidden"
                 } z-10 w-44 font-normal bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 absolute mt-5`}
               >
                 <ul
-                  class="py-1 text-sm text-gray-700 dark:text-gray-400"
+                  className="py-1 text-sm text-gray-700 dark:text-gray-400"
                   aria-labelledby="dropdownLargeButton"
                 >
                   <li>
                     <a
                       href="#"
-                      class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       onClick={() => setcurrency("USD")}
                     >
                       USD
@@ -58,7 +58,7 @@ const Dropdown = () => {
                   <li>
                     <a
                       href="#"
-                      class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       onClick={() => setcurrency("INR")}
                     >
                       INR

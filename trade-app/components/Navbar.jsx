@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div>
       <nav
-        class="
+        className="
           flex flex-wrap
           items-center
           justify-between
@@ -72,23 +72,23 @@ const Navbar = () => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           id="menu-button"
-          class="h-6 w-6 cursor-pointer md:hidden block"
+          className="h-6 w-6 cursor-pointer md:hidden block"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
           onClick={() => {setdrop(!drop)}}
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M4 6h16M4 12h16M4 18h16"
           />
         </svg>
 
-        <div class={`${drop ? 'block' : 'hidden'} w-full md:flex md:items-center md:w-auto`} id="menu">
+        <div className={`${drop ? 'block' : 'hidden'} w-full md:flex md:items-center md:w-auto`} id="menu">
           <ul
-            class="
+            className="
               pt-4
               text-base text-gray-700
               md:flex
@@ -96,17 +96,17 @@ const Navbar = () => {
               md:pt-0"
           >
             <li>
-              <Link class="md:p-4 py-2 block hover:text-purple-400" href='/CryptoTracker'>
+              <Link className="md:p-4 py-2 block hover:text-purple-400" href='/CryptoTracker'>
                 Crypto
               </Link>
             </li>
             <li>
-              <Link class="md:p-4 py-2 block hover:text-purple-400" href="/News">
+              <Link className="md:p-4 py-2 block hover:text-purple-400" href="/News">
                 News
               </Link>
             </li>
             <li>
-              <Link class="md:p-4 py-2 block hover:text-purple-400" href="/Stocks">
+              <Link className="md:p-4 py-2 block hover:text-purple-400" href="/Stocks">
                 Stocks
               </Link>
             </li>

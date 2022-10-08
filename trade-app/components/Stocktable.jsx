@@ -8,20 +8,20 @@ const Stocktable = () => {
   
   return (
     <div>
-      <div class="overflow-x-auto relative">
-        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead class="text-xs text-gray-900 uppercase dark:text-gray-400">
+      <div className="overflow-x-auto relative">
+        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead className="text-xs text-gray-900 uppercase dark:text-gray-400">
             <tr>
-              <th scope="col" class="py-3 px-6">
+              <th scope="col" className="py-3 px-6">
                 Symbol
               </th>
-              <th scope="col" class="py-3 px-6">
+              <th scope="col" className="py-3 px-6">
                 Name
               </th>
-              <th scope="col" class="py-3 px-6">
+              <th scope="col" className="py-3 px-6">
                 Price
               </th>
-              <th scope="col" class="py-3 px-6">
+              <th scope="col" className="py-3 px-6">
                 Change
               </th>
             </tr>
@@ -30,16 +30,16 @@ const Stocktable = () => {
             {stock.map((info) => {
               return (
                 <Link href={`/stock/${info.symbol}`}>
-                  <tr class="bg-white dark:bg-gray-800">
+                  <tr className="bg-white dark:bg-gray-800">
                     <th
                       scope="row"
-                      class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                      className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                     >
                       {info.symbol}
                     </th>
-                    <td class="py-4 px-6">{info.name}</td>
-                    <td class="py-4 px-6">{info.price}</td>
-                    <td class="py-4 px-6">{info.change}</td>
+                    <td className="py-4 px-6">{info.name}</td>
+                    <td className="py-4 px-6">{info.price}</td>
+                    <td className="py-4 px-6">{info.change}</td>
                   </tr>
                 </Link>
               );
