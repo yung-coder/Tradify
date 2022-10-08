@@ -11,6 +11,8 @@ const AppContext = ({ children }) => {
   const [exchange, setexchange] = useState("");
   const [searchres, setsearchres] = useState([]);
   const [change, setchange] = useState(false);
+  const [slug,setslug] = useState('');
+  const [details,setdetails] = useState([]);
   useEffect(() => {
     if (currency === "INR") setsymbol("₹");
     else if (currency === "USD") setsymbol("$");
@@ -59,6 +61,15 @@ const AppContext = ({ children }) => {
   
   };
 
+  const Coininfo =() =>{
+    axios(
+      `https://financialmodelingprep.com/api/v3/profile/${slug}?apikey=90171db29ef4387ad340b2f435c8325b`,
+    ).then((response) => {
+      console.log(response.data)
+      setdetails(response.data);
+    });
+  }
+
   return (
     <Crypto.Provider
       value={{
@@ -78,7 +89,11 @@ const AppContext = ({ children }) => {
         setexchange,
         searchres,
         setsearchres,
-        change
+        change,
+        Coininfo,
+        details,
+        slug,
+        setslug
       }}
     >
       {children}

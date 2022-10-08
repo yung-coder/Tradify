@@ -1,10 +1,9 @@
+import Link from "next/link";
 import React from "react";
 import { CryptoState } from "../AppContext";
 
 const Searchstock = () => {
-  const {
-    searchres
-  } = CryptoState();
+  const { searchres } = CryptoState();
   return (
     <div>
       <div class="overflow-x-auto relative">
@@ -28,17 +27,19 @@ const Searchstock = () => {
           <tbody>
             {searchres.map((info) => {
               return (
-                <tr class="bg-white dark:bg-gray-800">
-                  <th
-                    scope="row"
-                    class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                  >
-                    {info.symbol}
-                  </th>
-                  <td class="py-4 px-6">{info.name}</td>
-                  <td class="py-4 px-6">{info.stockExchange}</td>
-                  <td class="py-4 px-6">{info.currency}</td>
-                </tr>
+                <Link href={`/stock/${info.symbol}`}>
+                  <tr class="bg-white dark:bg-gray-800">
+                    <th
+                      scope="row"
+                      class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      {info.symbol}
+                    </th>
+                    <td class="py-4 px-6">{info.name}</td>
+                    <td class="py-4 px-6">{info.stockExchange}</td>
+                    <td class="py-4 px-6">{info.currency}</td>
+                  </tr>
+                </Link>
               );
             })}
           </tbody>
