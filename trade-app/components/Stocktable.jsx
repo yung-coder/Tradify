@@ -10,7 +10,7 @@ const Stocktable = () => {
     <div>
       <div className="overflow-x-auto relative">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead className="text-xs text-gray-900 uppercase dark:text-gray-400">
+          <thead className="text-xs bg-[#90EE90] text-slate-800">
             <tr>
               <th scope="col" className="py-3 px-6">
                 Symbol
@@ -30,7 +30,7 @@ const Stocktable = () => {
             {stock.map((info) => {
               return (
                 <Link href={`/stock/${info.symbol}`} key={info.symbol}>
-                  <tr className="bg-white dark:bg-gray-800">
+                  <tr className="bg-[#100C08] text-white border">
                     <th
                       scope="row"
                       className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
