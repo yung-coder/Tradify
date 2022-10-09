@@ -16,7 +16,7 @@ const Navbar = () => {
           px-4
           md:p-4
           text-lg 
-          bg-[#00FA9A]
+          bg-[#98FB98]
         "
       >
         <div>
@@ -45,34 +45,38 @@ const Navbar = () => {
           />
         </svg>
 
-        <div className={`${drop ? 'block' : 'hidden'} w-full md:flex md:items-center md:w-auto`} id="menu">
+        <div className={`${drop ? 'block' : 'hidden'} w-full md:flex md:items-center md:w-auto mt-4 md:mt-0 flex justify-center items-center`} id="menu">
           <ul
             className="
               pt-4
               text-base 
+              space-y-4
+              md:space-y-0
               text-black
               md:space-x-10
               md:flex
               md:justify-between 
-              md:pt-0"
+              md:pt-0
+              font-semibold
+              "
           >
-            <li>
-              <Link className="md:p-4 py-2 block hover:text-purple-400" href='/'>
+            <li className="hover:text-[#004953]">
+              <Link className="md:p-4 py-2 block" href='/'>
                 Home
               </Link>
             </li>
-            <li>
-              <Link className="md:p-4 py-2 block hover:text-purple-400" href='/CryptoTracker'>
+            <li  className="hover:text-[#004953]">
+              <Link className="md:p-4 py-2 block " href='/CryptoTracker'>
                 Crypto
               </Link>
             </li>
-            <li>
-              <Link className="md:p-4 py-2 block hover:text-purple-400" href="/News">
+            <li  className="hover:text-[#004953]">
+              <Link className="md:p-4 py-2 block " href="/News">
                 News
               </Link>
             </li>
-            <li>
-              <Link className="md:p-4 py-2 block hover:text-purple-400" href="/Stocks">
+            <li  className="hover:text-[#004953]">
+              <Link className="md:p-4 py-2 block " href="/Stocks">
                 Stocks
               </Link>
             </li>
