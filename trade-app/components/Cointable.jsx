@@ -38,7 +38,7 @@ const Cointable = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center space-y-7 bg-[#004022] h-[200px] text-[#c3f53c]">
+      <div className="flex flex-col justify-center items-center space-y-7 bg-[#32CD32] h-[200px] text-[#c3f53c]">
         <div className="flex justify-center items-center font-bold">
            <h1 className="text-2xl font-bold ">Coins Listed</h1>
         </div>

@@ -28,8 +28,8 @@ const Carousel = () => {
     return (
       <>
         <Link href={`/coin/${coin.id}`} key={coin.id}>
-          <div>
-            <div className="flex flex-col justify-center items-center space-y-7">
+          <div className="  flex p-1 md:p-4">
+            <div className="flex flex-col justify-center items-center space-y-7  bg-[#1B1212] text-white w-48 p-4 rounded-md cursor-pointer  shadow-md shadow-green-400 hover:ease-in hover:duration-200">
               <div>
               <img src={coin?.image} alt={coin.name} className="h-28" />
               </div>
@@ -37,7 +37,7 @@ const Carousel = () => {
                 {coin?.symbol}
                 &nbsp;
               </h1>
-              <h1>
+              <h1 className={` ${profit ? 'text-green-600' : 'text-red-600'} `}>
                 {" "}
                 {profit && "+"}
                 {coin?.price_change_percentage_24h?.toFixed(2)}%
