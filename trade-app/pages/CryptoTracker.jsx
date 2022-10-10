@@ -6,9 +6,9 @@ const CryptoTracker = () => {
   return (
     <div className="flex flex-col">
       <div className="w-full h-[400px]">
-        <div className="bg-gradient-to-r h-full  bg-[#191970] flex flex-col ">
-          <div className="flex justify-center items-center">
-            <h1 className="text-white text-3xl">Trending Coins</h1>
+        <div className="bg-gradient-to-r h-full  bg-[#9FE2BF] flex flex-col space-y-3">
+          <div className="flex justify-center items-center mt-2">
+            <h1 className="text-slate-800 text-3xl font-bold">Trending Coins</h1>
           </div>
           <Carousel />
         </div>
