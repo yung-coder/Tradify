@@ -67,7 +67,7 @@ const Coininfo = ({ coin }) => {
                   // setflag(false);
                 }}
                 selected={day.value === days}
-                className="bg-orange-500 p-1  rounded-lg"
+                className="bg-slate-400 p-1  rounded-lg"
               >
                 {day.label}
               </button>
