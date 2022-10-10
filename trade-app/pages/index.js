@@ -15,24 +15,24 @@ export default function Home() {
       </Head>
 
       <div className="min-h-screen  bg-[#eaf4fc]">
-        {/* <div className="flex flex-col justify-center items-center">
-           <img src='https://media.discordapp.net/attachments/1023253482058285126/1026494783516061697/20221003_193314_0000.png' alt="" className="w-96 h-96"/>
-           <h1 className="text-2xl">Tradify</h1>
-         </div> */}
-        <div>
+        <div className="flex flex-col">
           <div>
-            <div className="flex justify-center items-center">
-              <h1 className="text-xl font-bold tracking-widest">
+            <div className="flex justify-center items-center h-72 bg-[#4c268f]">
+              <h1 className="text-3xl font-bold  italic text-[#99eeb4] md:text-5xl">
                 Welcome to Tradify
               </h1>
             </div>
-            <div className="flex flex-col justify-center items-center space-y-12">
-              <div>
-                <h1 className="text-xl font-bold">Services we provide</h1>
+            <div className="flex flex-col justify-center items-center space-y-12 mt-10 p-3 md:space-y-24">
+              <div className="">
+                <h1 className="text-2xl font-bold italic underline md:text-3xl">
+                  Services we provide
+                </h1>
               </div>
-              <Stockcard />
-              <Cryptocard />
-              <Newslayout />
+              <div className="flex flex-col space-y-11 cursor-pointer md:flex-row md:space-y-0 md:space-x-20">
+                <Stockcard />
+                <Cryptocard />
+                <Newslayout />
+              </div>
             </div>
           </div>
         </div>
