@@ -39,7 +39,7 @@ const AppContext = ({ children }) => {
 
   const ListStocks = () => {
     axios(
-      `https://financialmodelingprep.com/api/v3/stock_market/gainers?apikey=4a7093567c38b37f29104d8be6b7f90b`,
+      `https://financialmodelingprep.com/api/v3/stock_market/gainers?apikey=90171db29ef4387ad340b2f435c8325b`,
       {}
     ).then((response) => {
       console.log(response.data);
@@ -49,7 +49,7 @@ const AppContext = ({ children }) => {
 
   const SearchStock = () => {
     axios(
-      `https://financialmodelingprep.com/api/v3/search-name?query=${company}&limit=10&exchange=${exchange}&apikey=4a7093567c38b37f29104d8be6b7f90b`,
+      `https://financialmodelingprep.com/api/v3/search-name?query=${company}&limit=10&exchange=${exchange}&apikey=90171db29ef4387ad340b2f435c8325b`,
       {}
     ).then((response) => {
       console.log(response.data);
@@ -63,7 +63,7 @@ const AppContext = ({ children }) => {
 
   const Coininfo =() =>{
     axios(
-      `https://financialmodelingprep.com/api/v3/profile/${slug}?apikey=4a7093567c38b37f29104d8be6b7f90b`,
+      `https://financialmodelingprep.com/api/v3/profile/${slug}?apikey=90171db29ef4387ad340b2f435c8325b`,
     ).then((response) => {
       console.log(response.data)
       setdetails(response.data);
