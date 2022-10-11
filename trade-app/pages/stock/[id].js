@@ -24,7 +24,7 @@ const Post = () => {
       {details.map((item) => {
         return (
           <div key={item.symbol}>
-            <div className="flex flex-col space-y-6">
+            <div className="flex flex-col space-y-6 p-3">
               <div className="flex flex-col space-y-6 justify-center items-center">
                 <img src={item.image} alt="" />
                 <h1 className="text-xl font-bold">{item.sector}</h1>
@@ -35,15 +35,18 @@ const Post = () => {
                   <p>{item.volAvg}</p>
                 </div>
                 <div className="flex space-x-5">
-                  <p>{item.price}</p>
-                  <p>{item.mktCap}</p>
+                  <p>{item.price}$</p>
+                  <p>{item.mktCap}$</p>
                 </div>
                 <div>
-                  <a href={item.website} className='hover:text-blue-700'>Website ➡️</a>
+                  <a href={item.website} className="hover:text-blue-700">
+                    Website 🌐
+                  </a>
                 </div>
               </div>
-              <div className="w-96 border p-3 text-center font-medium flex flex-col space-y-6">
-                 <h1 className="text-2xl font-bold">About</h1>
+                <hr />
+              <div className="w-[360px] p-2 text-center font-medium flex flex-col space-y-6 justify-center items-center">
+                <h1 className="text-2xl font-bold underline">About</h1>
                 <p>{item.description}</p>
               </div>
             </div>
