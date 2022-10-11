@@ -44,7 +44,7 @@ const Cointable = () => {
         </div>
         <input type="text" onChange={(e) => setSearch(e.target.value)}  className="bg-[#000000] text-white rounded-md outline-none p-2 placeholder:text-white" placeholder="Enter the coin name"/>
       </div>
-      <div className="overflow-x-auto shadow-md  md:w-full ">
+      <div className="overflow-x-auto shadow-md  md:w-full">
         <table className="w-full text-sm text-left  ">
           <thead className="text-xs  uppercase bg-black text-white md:text-lg">
             <tr>
@@ -69,7 +69,7 @@ const Cointable = () => {
             {handleSearch().map((coin) => {
               const profit = coin.price_change_percentage_24h > 0;
               return (
-                <Link href={`/coin/${coin.id}`} key={coin.id}>
+                <Link href={`/coin/${coin.id}`} key={coin.id} >
                   <tr className="border-b-slate-50  cursor-pointer bg-[#0E0C0A]  text-white">
                     <th
                       scope="row"
