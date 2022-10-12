@@ -19,6 +19,7 @@ const Cryptocard = () => {
           </div>
         </div>
       </Link>
+      // revert
     </div>
   );
 };
