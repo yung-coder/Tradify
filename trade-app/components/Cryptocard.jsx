@@ -20,6 +20,7 @@ const Cryptocard = () => {
         </div>
       </Link>
       // revert
+      // slow down
     </div>
   );
 };
