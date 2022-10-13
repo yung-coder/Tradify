@@ -21,6 +21,7 @@ const Cryptocard = () => {
       </Link>
       // revert
       // slow down
+      // rework !!!
     </div>
   );
 };
