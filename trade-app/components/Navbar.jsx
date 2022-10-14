@@ -24,7 +24,7 @@ const Navbar = () => {
              <div className="h-12 w-12">
                <Image src={logo} className='rounded-full'></Image>
              </div>
-             <h1>Tradify</h1>
+             <h1 className="italic font-bold">Tradify</h1>
            </div>
         </div>
 
