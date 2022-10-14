@@ -40,7 +40,7 @@ const Cointable = () => {
     <>
       <div className="flex flex-col justify-center items-center space-y-7 bg-[#2AAA8A] h-[200px] text-[#c3f53c]">
         <div className="flex justify-center items-center font-bold">
-           <h1 className="text-2xl font-bold ">Coins Listed</h1>
+           <h1 className="text-3xl font-bold  italic ">Search Coins</h1>
         </div>
         <input type="text" onChange={(e) => setSearch(e.target.value)}  className="bg-[#000000] text-white rounded-md outline-none p-2 placeholder:text-white" placeholder="Enter the coin name"/>
       </div>

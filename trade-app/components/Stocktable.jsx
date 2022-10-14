@@ -30,7 +30,7 @@ const Stocktable = () => {
             {stock.map((info) => {
               return (
                 <Link href={`/stock/${info.symbol}`} key={info.symbol}>
-                  <tr className="bg-[#100C08] text-white border">
+                  <tr className="bg-[#100C08] text-white md:p-3 cursor-pointer">
                     <th
                       scope="row"
                       className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
