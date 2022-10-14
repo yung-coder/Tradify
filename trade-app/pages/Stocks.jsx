@@ -21,9 +21,9 @@ const Stocks = () => {
   return (
     <div className="flex flex-col ">
       <div className="w-full">
-        <div className="flex flex-col justify-center items-center space-y-6 bg-[#9FE2BF] p-8">
+        <div className="flex flex-col justify-center items-center space-y-6 bg-[#9FE2BF] md:p-20 p-5">
           <div>
-            <h1 className="text-2xl font-bold md:text-3xl italic">Stocks Montringing</h1>
+            <h1 className="text-2xl font-bold  italic md:text-4xl">Stocks Montringing</h1>
           </div>
           <div className="flex  flex-col justify-center items-center space-y-6 p-5 md:flex-row md:space-y-0  md:space-x-6">
           <input

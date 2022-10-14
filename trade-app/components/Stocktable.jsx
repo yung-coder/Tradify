@@ -10,7 +10,7 @@ const Stocktable = () => {
     <div>
       <div className="overflow-x-auto relative">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead className="text-xs bg-[#90EE90] text-slate-800">
+          <thead className="text-xs bg-[#90EE90] text-slate-800 md:text-base">
             <tr>
               <th scope="col" className="py-3 px-6">
                 Symbol
@@ -38,7 +38,7 @@ const Stocktable = () => {
                       {info.symbol}
                     </th>
                     <td className="py-4 px-6">{info.name}</td>
-                    <td className="py-4 px-6">{info.price}</td>
+                    <td className="py-4 px-6 text-green-400">{info.price}</td>
                     <td className="py-4 px-6">{info.change}</td>
                   </tr>
                 </Link>
