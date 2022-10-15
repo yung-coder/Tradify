@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import Link from 'next/link';
-import logo from '../images/tradify.png';
-import Image from 'next/image';
+import Link from "next/link";
+import logo from "../images/tradify.png";
+import Image from "next/image";
+import { BsSunFill } from "react-icons/bs";
+import { BsFillMoonFill } from "react-icons/bs";
+import { CryptoState } from "../AppContext";
 const Navbar = () => {
   const [drop, setdrop] = useState(false);
+  const { toogleMode, mode } = CryptoState();
   return (
     <div>
       <nav
@@ -20,12 +24,12 @@ const Navbar = () => {
         "
       >
         <div>
-           <div className="flex justify-center items-center space-x-5">
-             <div className="h-12 w-12">
-               <Image src={logo} className='rounded-full'></Image>
-             </div>
-             <h1 className="italic font-bold">Tradify</h1>
-           </div>
+          <div className="flex justify-center items-center space-x-5">
+            <div className="h-12 w-12">
+              <Image src={logo} className="rounded-full"></Image>
+            </div>
+            <h1 className="italic font-bold">Tradify</h1>
+          </div>
         </div>
 
         <svg
@@ -35,7 +39,9 @@ const Navbar = () => {
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          onClick={() => {setdrop(!drop)}}
+          onClick={() => {
+            setdrop(!drop);
+          }}
         >
           <path
             strokeLinecap="round"
@@ -45,7 +51,12 @@ const Navbar = () => {
           />
         </svg>
 
-        <div className={`${drop ? 'block' : 'hidden'} w-full md:flex md:items-center md:w-auto mt-4 md:mt-0 flex justify-center items-center`} id="menu">
+        <div
+          className={`${
+            drop ? "block" : "hidden"
+          } w-full md:flex md:items-center md:w-auto mt-4 md:mt-0 flex justify-center items-center`}
+          id="menu"
+        >
           <ul
             className="
               pt-4
@@ -61,24 +72,31 @@ const Navbar = () => {
               "
           >
             <li className="hover:text-[#004953]">
-              <Link className="md:p-4 py-2 block" href='/'>
+              <Link className="md:p-4 py-2 block" href="/">
                 Home
               </Link>
             </li>
-            <li  className="hover:text-[#004953]">
-              <Link className="md:p-4 py-2 block " href='/CryptoTracker'>
+            <li className="hover:text-[#004953]">
+              <Link className="md:p-4 py-2 block " href="/CryptoTracker">
                 Crypto
               </Link>
             </li>
-            <li  className="hover:text-[#004953]">
+            <li className="hover:text-[#004953]">
               <Link className="md:p-4 py-2 block " href="/News">
                 News
               </Link>
             </li>
-            <li  className="hover:text-[#004953]">
+            <li className="hover:text-[#004953]">
               <Link className="md:p-4 py-2 block " href="/Stocks">
                 Stocks
               </Link>
+            </li>
+            <li className="hover:text-[#004953]">
+              {mode === "light" ? (
+                <BsFillMoonFill onClick={toogleMode} />
+              ) : (
+                <BsSunFill onClick={toogleMode} />
+              )}
             </li>
           </ul>
         </div>

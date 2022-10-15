@@ -13,10 +13,20 @@ const AppContext = ({ children }) => {
   const [change, setchange] = useState(false);
   const [slug,setslug] = useState('');
   const [details,setdetails] = useState([]);
+  const [mode,setmode] = useState('light');
   useEffect(() => {
     if (currency === "INR") setsymbol("₹");
     else if (currency === "USD") setsymbol("$");
   }, [currency]);
+
+  const toogleMode =()=>{
+     if(mode ==='light'){
+         setmode('dark');
+     }
+     else{
+       setmode('light');
+     }
+  }
 
   const getCryptoNews = () => {
     axios(
@@ -93,7 +103,9 @@ const AppContext = ({ children }) => {
         Coininfo,
         details,
         slug,
-        setslug
+        setslug,
+        toogleMode,
+        mode
       }}
     >
       {children}

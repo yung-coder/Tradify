@@ -5,7 +5,9 @@ import Logo from "../images/translogo.png";
 import Stockcard from "../components/Stockcard";
 import Cryptocard from "../components/Cryptocard";
 import Newslayout from "../components/Newslayout";
+import { CryptoState } from "../AppContext";
 export default function Home() {
+  const {mode} = CryptoState()
   return (
     <div>
       <Head>
@@ -14,7 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="min-h-screen  bg-[#eaf4fc]">
+      <div className={`min-h-screen ${mode === 'light' ? 'bg-[#eaf4fc]' : 'bg-black'}`}>
         <div className="flex flex-col">
           <div>
             <div className="flex justify-center items-center h-72 bg-[#4c268f]">
