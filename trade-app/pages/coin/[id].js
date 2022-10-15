@@ -11,7 +11,7 @@ const Post = () => {
   //   const { slug } = router.query
   const { query } = useRouter();
   const [coin, setcoin] = useState();
-  const { currency, symbol } = CryptoState();
+  const { currency, symbol , mode } = CryptoState();
 
   const fetchcoin = async () => {
     const { data } = await axios.get(SingleCoin(query.id));
@@ -30,14 +30,14 @@ const Post = () => {
   }
   return (
     <div>
-      <div className="min-h-screen bg-[#eaf4fc] ">
+      <div className={`min-h-screen ${mode === 'light' ? 'bg-[#eaf4fc]' : 'bg-black'} `}>
         <div className="flex flex-col space-y-14 md:flex-row md:space-x-14 ">
-          <div className="flex flex-col justify-center space-y-5 md:space-y-16">
+          <div className={`flex flex-col justify-center space-y-5 md:space-y-16 ${mode === 'light' ? 'text-black' : 'text-white'} `}>
             <div className="flex flex-col justify-center items-center space-y-5 md:space-y-16">
               <div className="p-7">
                 <img src={coin?.image.large} alt="" />
               </div>
-              <div className="flex flex-col text-center space-y-2 p-4">
+              <div className="flex flex-col text-center space-y-2 p-3">
                 <h1 className="text-3xl font-bold">{coin?.name}</h1>
                 <div className="text-center w-fit font-semibold break-words md:w-[600px] md:text-2xl">
                   <p>{ReactHtmlParser(coin?.description.en.split(". ")[0])}.</p>
@@ -73,7 +73,7 @@ const Post = () => {
             </div>
           </div>
           <hr className="" />
-          <div className="md:absolute md:left-[40%] md:top-[20%]">
+          <div className="md:absolute md:left-[40%] md:top-[20%] p-2 md:p-0">
             <Coininfo coin={coin} />
           </div>
         </div>

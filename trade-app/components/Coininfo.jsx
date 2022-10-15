@@ -23,12 +23,12 @@ const Coininfo = ({ coin }) => {
   }, [currency, days]);
 
   return (
-    <div className="flex flex-col justify-center items-center w-full space-y-3">
+    <div className="flex flex-col justify-center items-center w-full space-y-3 ">
       {!historicalData ? (
         <p>loading..</p>
       ) : (
         <>
-          <div className="w-[400px] md:w-[1000px]">
+          <div className="w-[320px] md:w-[1000px]">
             <Line
               data={{
                 labels: historicalData.map((coin) => {
@@ -58,7 +58,7 @@ const Coininfo = ({ coin }) => {
               }}
             />
           </div>
-          <div className="space-x-6">
+          <div className="space-x-6 p-1">
             {chartDays.map((day) => (
               <button
                 key={day.value}
@@ -67,7 +67,7 @@ const Coininfo = ({ coin }) => {
                   // setflag(false);
                 }}
                 selected={day.value === days}
-                className="bg-slate-400 p-1  rounded-lg"
+                className="bg-slate-400 p-0.5  rounded-lg text-base"
               >
                 {day.label}
               </button>
