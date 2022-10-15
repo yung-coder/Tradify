@@ -69,6 +69,7 @@ const Navbar = () => {
               md:justify-between 
               md:pt-0
               font-semibold
+              cursor-pointer
               "
           >
             <li className="hover:text-[#004953]">

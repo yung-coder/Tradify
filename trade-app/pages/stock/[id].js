@@ -18,12 +18,13 @@ const Post = () => {
   useEffect(() => {
     Coininfo();
   }, []);
+  const { mode } = CryptoState();
 
   return (
     <div>
       {details.map((item) => {
         return (
-          <div key={item.symbol}>
+          <div key={item.symbol} className={` ${mode === 'light' ? 'bg-[#eaf4fc]' : 'bg-black text-white'}`}>
             <div className="flex flex-col space-y-6 p-3">
               <div className="flex flex-col space-y-6 justify-center items-center">
                 <img src={item.image} alt="" />
