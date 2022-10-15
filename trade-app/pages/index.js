@@ -26,7 +26,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col justify-center items-center space-y-12 mt-10 p-3 md:space-y-24">
               <div className="">
-                <h1 className="text-2xl font-bold italic underline md:text-3xl">
+                <h1 className={`text-2xl font-bold italic underline md:text-3xl ${mode === 'light'? 'text-black':'text-white'}`}>
                   Services we provide
                 </h1>
               </div>
