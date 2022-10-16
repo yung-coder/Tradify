@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { CryptoState } from "../AppContext";
 import Newscard from "../components/Newscard";
+import withAuth from "../withAuth";
 
 const News = () => {
   const { getCryptoNews, News , getStocknews , mode } = CryptoState();
@@ -33,4 +34,4 @@ const News = () => {
   );
 };
 
-export default News;
+export default withAuth(News);

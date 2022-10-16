@@ -2,6 +2,7 @@ import React from "react";
 import Carousel from "../components/Carousel";
 import Cointable from "../components/Cointable";
 import Dropdown from "../components/Dropdown";
+import withAuth from "../withAuth";
 const CryptoTracker = () => {
   return (
     <div className="flex flex-col">
@@ -21,4 +22,4 @@ const CryptoTracker = () => {
   );
 };
 
-export default CryptoTracker;
+export default  withAuth(CryptoTracker);

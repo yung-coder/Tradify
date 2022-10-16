@@ -3,6 +3,7 @@ import { CryptoState } from "../AppContext";
 import Searchstock from "../components/Searchstock";
 import Stocktable from "../components/Stocktable";
 import Image from "next/image";
+import withAuth from "../withAuth";
 const Stocks = () => {
   const {
     ListStocks,
@@ -55,4 +56,4 @@ const Stocks = () => {
   );
 };
 
-export default Stocks;
+export default  withAuth(Stocks);
