@@ -95,13 +95,13 @@ const Navbar = () => {
                 Stocks
               </Link>
             </li>
-            <li className="hover:text-[#004953]">
-               {withAuth? (
-                   <button onClick={signOut}>Logout</button>
-               ):(
-                 ''
-               )}
-            </li>
+            {withAuth ? (
+              <li className="hover:text-[#004953]">
+                <button onClick={signOut}>Logout</button>
+              </li>
+            ) : (
+                <></>
+            )}
             <li className="hover:text-[#004953]">
               {mode === "light" ? (
                 <BsFillMoonFill onClick={toogleMode} />
