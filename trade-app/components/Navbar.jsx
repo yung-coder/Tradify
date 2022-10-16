@@ -5,9 +5,12 @@ import Image from "next/image";
 import { BsSunFill } from "react-icons/bs";
 import { BsFillMoonFill } from "react-icons/bs";
 import { CryptoState } from "../AppContext";
+import { useSignOut } from "@nhost/nextjs";
+import withAuth from "../withAuth";
 const Navbar = () => {
   const [drop, setdrop] = useState(false);
   const { toogleMode, mode } = CryptoState();
+  const { signOut } = useSignOut();
   return (
     <div>
       <nav
@@ -91,6 +94,13 @@ const Navbar = () => {
               <Link className="md:p-4 py-2 block " href="/Stocks">
                 Stocks
               </Link>
+            </li>
+            <li className="hover:text-[#004953]">
+               {withAuth? (
+                   <button onClick={signOut}>Logout</button>
+               ):(
+                 ''
+               )}
             </li>
             <li className="hover:text-[#004953]">
               {mode === "light" ? (

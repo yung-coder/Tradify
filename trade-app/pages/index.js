@@ -5,13 +5,16 @@ import Logo from "../images/translogo.png";
 import Stockcard from "../components/Stockcard";
 import Cryptocard from "../components/Cryptocard";
 import Newslayout from "../components/Newslayout";
-import { CryptoState } from "../AppContext";
+import { CryptoState, UserProvider } from "../AppContext";
 import { useSignOut } from "@nhost/nextjs";
 import Link from "next/link";
 import SignUp from "./Signup";
+import { useUserData } from '@nhost/nextjs'
 export default function Home() {
   const { signOut } = useSignOut();
   const { mode } = CryptoState();
+  const user = useUserData()
+  // const {displayname} = UserProvider();
   return (
     <div>
       <Head>
@@ -29,6 +32,7 @@ export default function Home() {
           <div>
             <div className="flex justify-center items-center h-72 bg-[#4c268f] flex-col">
               <h1 className="text-3xl font-bold  italic text-[#99eeb4] md:text-5xl">
+                {user?.displayName}
                 Welcome to Tradify
               </h1>
               <div className="mt-16">
