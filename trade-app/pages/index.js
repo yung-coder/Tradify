@@ -6,6 +6,7 @@ import Stockcard from "../components/Stockcard";
 import Cryptocard from "../components/Cryptocard";
 import Newslayout from "../components/Newslayout";
 import { CryptoState } from "../AppContext";
+import SignUp from "./Signup";
 export default function Home() {
   const {mode} = CryptoState()
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      {/* <SignUp /> */}
       <div className={`min-h-screen ${mode === 'light' ? 'bg-[#eaf4fc]' : 'bg-black'}`}>
         <div className="flex flex-col">
           <div>
