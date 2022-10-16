@@ -6,8 +6,10 @@ import Stockcard from "../components/Stockcard";
 import Cryptocard from "../components/Cryptocard";
 import Newslayout from "../components/Newslayout";
 import { CryptoState } from "../AppContext";
+import { useSignOut } from '@nhost/nextjs'
 import SignUp from "./Signup";
 export default function Home() {
+  const { signOut } = useSignOut()
   const {mode} = CryptoState()
   return (
     <div>
@@ -25,6 +27,7 @@ export default function Home() {
               <h1 className="text-3xl font-bold  italic text-[#99eeb4] md:text-5xl">
                 Welcome to Tradify
               </h1>
+              <button onClick={signOut}>signout</button>
             </div>
             <div className="flex flex-col justify-center items-center space-y-12 mt-10 p-3 md:space-y-24">
               <div className="">
