@@ -9,11 +9,11 @@ import { CryptoState, UserProvider } from "../AppContext";
 import { useSignOut } from "@nhost/nextjs";
 import Link from "next/link";
 import SignUp from "./Signup";
-import { useUserData } from '@nhost/nextjs'
+import { useUserData } from "@nhost/nextjs";
 export default function Home() {
   const { signOut } = useSignOut();
   const { mode } = CryptoState();
-  const user = useUserData()
+  const user = useUserData();
   // const {displayname} = UserProvider();
   return (
     <div>
@@ -32,7 +32,6 @@ export default function Home() {
           <div>
             <div className="flex justify-center items-center h-72 bg-[#4c268f] flex-col">
               <h1 className="text-3xl font-bold  italic text-[#99eeb4] md:text-5xl">
-                {user?.displayName}
                 Welcome to Tradify
               </h1>
               <div className="mt-16">
@@ -48,6 +47,21 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            {user ? (
+              <div className={`flex justify-center items-center h-72 bg-[#eaf4fc] flex-col md:space-y-4 ${
+                mode === "light" ? "bg-[#eaf4fc]" : "bg-black text-white"
+              }`}>
+                <h1 className="text-xl font-semibold md:text-2xl">
+                  Welcome {user.displayName} 👋
+                </h1>
+                <p className="break-words p-4 text-center  text-lg md:font-medium md:text-xl">
+                  Welcome to tradify - your one stop for keeping track of all
+                  the crypto and stock prices
+                </p>
+              </div>
+            ) : (
+              <div></div>
+            )}
             <div className="flex flex-col justify-center items-center space-y-12 mt-10 p-3 md:space-y-24">
               <div className="">
                 <h1
@@ -55,7 +69,7 @@ export default function Home() {
                     mode === "light" ? "text-black" : "text-white"
                   }`}
                 >
-                  Services we provide
+                  Services
                 </h1>
               </div>
               <div className="flex flex-col space-y-11 cursor-pointer md:flex-row md:space-y-0 md:space-x-20">
