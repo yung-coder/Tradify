@@ -6,12 +6,13 @@ import { SingleCoin } from "../../utils/endpoints";
 import ReactHtmlParser from "react-html-parser";
 import { numberWithCommas } from "../../components/Cointable";
 import Coininfo from "../../components/Coininfo";
+import Spinner from "../../components/Spinner";
 const Post = () => {
   //   const router = useRouter()
   //   const { slug } = router.query
   const { query } = useRouter();
   const [coin, setcoin] = useState();
-  const { currency, symbol , mode } = CryptoState();
+  const { currency, symbol, mode } = CryptoState();
 
   const fetchcoin = async () => {
     const { data } = await axios.get(SingleCoin(query.id));
@@ -26,13 +27,25 @@ const Post = () => {
   console.log(coin);
 
   if (!coin) {
-    return <p>Loading...</p>;
+    return (
+      <div className="min-h-screen flex justify-center items-center">
+        <Spinner />
+      </div>
+    );
   }
   return (
     <div>
-      <div className={`min-h-screen ${mode === 'light' ? 'bg-[#eaf4fc]' : 'bg-black'} `}>
+      <div
+        className={`min-h-screen ${
+          mode === "light" ? "bg-[#eaf4fc]" : "bg-black"
+        } `}
+      >
         <div className="flex flex-col space-y-14 md:flex-row md:space-x-14 ">
-          <div className={`flex flex-col justify-center space-y-5 md:space-y-16 ${mode === 'light' ? 'text-black' : 'text-white'} `}>
+          <div
+            className={`flex flex-col justify-center space-y-5 md:space-y-16 ${
+              mode === "light" ? "text-black" : "text-white"
+            } `}
+          >
             <div className="flex flex-col justify-center items-center space-y-5 md:space-y-16">
               <div className="p-7">
                 <img src={coin?.image.large} alt="" />

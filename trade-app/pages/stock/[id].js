@@ -2,16 +2,20 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { CryptoState } from "../../AppContext";
+import Spinner from "../../components/Spinner";
 
 const Post = () => {
   const { query } = useRouter();
   const [details, setdetails] = useState([]);
+  const [spinner, setspinner] = useState();
   const Coininfo = () => {
     axios(
       `https://financialmodelingprep.com/api/v3/profile/${query.id}?apikey=90171db29ef4387ad340b2f435c8325b`
     ).then((response) => {
+      setspinner(true);
       console.log(response.data);
       setdetails(response.data);
+      setspinner(false);
     });
   };
 
@@ -20,12 +24,20 @@ const Post = () => {
   }, []);
   const { mode } = CryptoState();
 
+  if(spinner){
+    return (
+      <div className="min-h-screen flex justify-center items-center">
+        <Spinner />
+      </div>
+    );
+  }
+
   return (
     <div>
       {details.map((item) => {
         return (
-          <div key={item.symbol} className={` ${mode === 'light' ? 'bg-[#eaf4fc]' : 'bg-black text-white'}`}>
-            <div className="flex flex-col space-y-6 p-3">
+          <div key={item.symbol} className={` ${mode === 'light' ? 'bg-[#eaf4fc]' : 'bg-black text-white'} min-h-screen`}>
+            <div className="flex flex-col space-y-6 p-3 justify-center items-center">
               <div className="flex flex-col space-y-6 justify-center items-center">
                 <img src={item.image} alt="" />
                 <h1 className="text-xl font-bold md:text-3xl">{item.sector}</h1>
