@@ -30,7 +30,7 @@ export default function Home() {
       >
         <div className="flex flex-col">
           <div>
-            <div className="flex justify-center items-center h-72 bg-[#4c268f] flex-col">
+            {/* <div className="flex justify-center items-center h-72 bg-[#4c268f] flex-col">
               <h1 className="text-3xl font-bold  italic text-[#99eeb4] md:text-5xl">
                 Welcome to Tradify
               </h1>
@@ -46,21 +46,39 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             {user ? (
-              <div className={`flex justify-center items-center h-72 bg-[#eaf4fc] flex-col md:space-y-4 ${
-                mode === "light" ? "bg-[#eaf4fc]" : "bg-black text-white"
-              }`}>
-                <h1 className="text-xl font-semibold md:text-2xl">
-                  Welcome {user.displayName} 👋
+              <div
+                className='flex justify-center items-center h-96 bg-[#4c268f] flex-col space-y-11'
+              >
+                <h1 className="text-3xl font-bold  italic text-[#99eeb4] md:text-4xl">
+                  Welcome {user.displayName} 
                 </h1>
-                <p className="break-words p-4 text-center  text-lg md:font-medium md:text-xl">
+                <p className="break-words  text-center  text-lg md:font-medium md:text-2xl text-white">
                   Welcome to tradify - your one stop for keeping track of all
                   the crypto and stock prices
                 </p>
               </div>
             ) : (
-              <div></div>
+              <div>
+                <div className="flex justify-center items-center h-96 bg-[#4c268f] flex-col">
+                  <h1 className="text-3xl font-bold  italic text-[#99eeb4] md:text-5xl">
+                    Welcome to Tradify
+                  </h1>
+                  <div className="mt-16">
+                    <div className="flex flex-col  space-y-5 md:flex-row md:space-y-0 md:space-x-5 ">
+                      <div className="flex flex-col md:flex-row md:space-x-7">
+                        <div className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-14 py-2.5 text-center mr-2 mb-2">
+                          <Link href="/Sign">Sigin</Link>
+                        </div>
+                        <div className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-14 py-2.5 text-center mr-2 mb-2">
+                          <Link href="/Signup">Sigup</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             )}
             <div className="flex flex-col justify-center items-center space-y-12 mt-10 p-3 md:space-y-24">
               <div className="">
