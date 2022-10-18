@@ -3,12 +3,14 @@ import { useRouter } from "next/router";
 import { useSignInEmailPassword } from "@nhost/nextjs";
 import Link from "next/link";
 import Image from "next/image";
+import { CryptoState } from "../AppContext";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const router = useRouter();
+  const { mode } = CryptoState();
 
   const {
     signInEmailPassword,
@@ -41,9 +43,9 @@ const SignIn = () => {
           </p>
         ) : (
           <>
-            <section class="bg-[#2AAA8A]">
+            <section class={`${ mode === "light" ? "bg-[#eaf4fc]" : "bg-black"}`}>
               <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
-                <a class="flex items-center  text-3xl mb-6 font-bold text-gray-900 dark:text-white italic">
+                <a class={`flex items-center  text-4xl mb-6 font-bold text-[#99eeb4] ${ mode === "light" ? "text-black" : 'text-[#99eeb4]'} italic`}> 
                   Tradify
                 </a>
                 <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
@@ -101,12 +103,12 @@ const SignIn = () => {
                       </button>
                       <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                         Don’t have an account yet?{" "}
-                        <a
-                          href="#"
+                        <Link
+                          href="/Signup"
                           class="font-medium text-primary-600 hover:underline dark:text-primary-500"
                         >
                           Sign up
-                        </a>
+                        </Link>
                       </p>
                     </form>
                   </div>

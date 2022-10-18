@@ -3,12 +3,14 @@ import { useRouter } from "next/router";
 import { useSignUpEmailPassword } from "@nhost/nextjs";
 import Link from "next/link";
 import Image from "next/image";
+import { CryptoState } from "../AppContext";
 
 const SignUp = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { mode } = CryptoState();
 
   const router = useRouter();
 
@@ -50,11 +52,11 @@ const SignUp = () => {
             your email.
           </p>
         ) : (
-          <section class="bg-[#2AAA8A]">
+          <section class={` ${ mode === "light" ? "bg-[#eaf4fc]" : "bg-black"}`}>
             <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
               <a
                 href="#"
-                class="flex items-center mb-6 text-3xl font-semibold text-gray-900 dark:text-white italic"
+                class={`flex items-center mb-6 text-3xl font-semibold ${ mode === "light" ? "text-black" : 'text-[#99eeb4]'} italic`}
               >
                 Tradify
               </a>
@@ -145,12 +147,12 @@ const SignUp = () => {
                     </button>
                     <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                       Already have an account?{" "}
-                      <a
-                        href="#"
+                      <Link
+                        href="/Sign"
                         class="font-medium text-primary-600 hover:underline dark:text-primary-500"
                       >
                         Login here
-                      </a>
+                      </Link>
                     </p>
                   </form>
                 </div>

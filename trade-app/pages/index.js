@@ -30,23 +30,6 @@ export default function Home() {
       >
         <div className="flex flex-col">
           <div>
-            {/* <div className="flex justify-center items-center h-72 bg-[#4c268f] flex-col">
-              <h1 className="text-3xl font-bold  italic text-[#99eeb4] md:text-5xl">
-                Welcome to Tradify
-              </h1>
-              <div className="mt-16">
-                <div className="flex flex-col  space-y-5 md:flex-row md:space-y-0 md:space-x-5 ">
-                  <div className="flex flex-col md:flex-row md:space-x-7">
-                    <div className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-14 py-2.5 text-center mr-2 mb-2">
-                      <Link href="/Sign">Sigin</Link>
-                    </div>
-                    <div className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-14 py-2.5 text-center mr-2 mb-2">
-                      <Link href="/Signup">Sigup</Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> */}
             {user ? (
               <div
                 className='flex justify-center items-center h-96 bg-[#4c268f] flex-col space-y-11'
