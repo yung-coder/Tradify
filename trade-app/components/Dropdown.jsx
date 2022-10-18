@@ -7,8 +7,7 @@ const Dropdown = () => {
 
   console.log(currency);
   return (
-    <nav className="p-4  bg-black md:p-2">
-      <div className="container flex  justify-end items-end">
+    <nav className="p-4  bg-slate-700 md:p-2">
         <div className="w-full md:block md:w-auto" id="mobile-menu">
           <ul className="flex flex-col  rounded-lg  md:flex-row md:mt-0 md:text-sm md:font-medium ">
             <li>
@@ -20,7 +19,7 @@ const Dropdown = () => {
                   setdrop(!drop);
                 }}
               >
-                Dropdown{" "}
+                Currency
                 <svg
                   className="ml-1 w-5 h-5"
                   aria-hidden="true"
@@ -40,7 +39,7 @@ const Dropdown = () => {
                 id="dropdownNavbar"
                 className={`${
                   drop ? "block" : "hidden"
-                } z-10 w-44 font-normal bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 absolute mt-5`}
+                } z-10 w-44 font-normal rounded divide-y divide-gray-100 shadow bg-slate-600 absolute mt-5`}
               >
                 <ul
                   className="py-1 text-sm text-gray-700 dark:text-gray-400"
@@ -69,7 +68,6 @@ const Dropdown = () => {
             </li>
           </ul>
         </div>
-      </div>
     </nav>
   );
 };

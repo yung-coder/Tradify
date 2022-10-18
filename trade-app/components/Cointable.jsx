@@ -38,15 +38,15 @@ const Cointable = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center space-y-7 bg-[#2AAA8A] h-[200px] text-[#c3f53c]">
-        <div className="flex justify-center items-center font-bold">
-           <h1 className="text-3xl font-bold  italic ">Search Coins</h1>
+      <div className="flex flex-col justify-center items-center space-y-7 bg-[#9FE2BF] h-80 text-black ">
+        <div className="flex justify-center items-center font-bold p-2 md:text-4xl md:p-3">
+           <h1 className="text-3xl font-bold  italic ">Cryptocurrencies Prices</h1>
         </div>
-        <input type="text" onChange={(e) => setSearch(e.target.value)}  className="bg-[#000000] text-white rounded-md outline-none p-2 placeholder:text-white" placeholder="Enter the coin name"/>
+        <input type="text" onChange={(e) => setSearch(e.target.value)}  className="bg-[#000000] text-white rounded-md outline-none p-2 placeholder:text-white" placeholder="Enter  coin name"/>
       </div>
       <div className="overflow-x-auto shadow-md  md:w-full">
         <table className="w-full text-sm text-left  ">
-          <thead className="text-xs  uppercase bg-black text-white md:text-lg">
+          <thead className="text-xs  uppercase bg-slate-700 text-white md:text-lg">
             <tr>
               <th scope="col" className="py-3 px-6">
                 Coin img
