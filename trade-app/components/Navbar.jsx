@@ -28,9 +28,9 @@ const Navbar = () => {
       >
         <div>
           <div className="flex justify-center items-center space-x-5">
-            <div className="h-12 w-12">
+            {/* <div className="h-12 w-12">
               <Image src={logo} className="rounded-full"></Image>
-            </div>
+            </div> */}
             <h1 className="italic font-bold">Tradify</h1>
           </div>
         </div>
@@ -100,9 +100,9 @@ const Navbar = () => {
                 <button onClick={signOut}>Logout</button>
               </li>
             ) : (
-                <></>
+                <li></li>
             )}
-            <li className="hover:text-[#004953]">
+            <li className="hover:text-[#004953] flex justify-center items-center">
               {mode === "light" ? (
                 <BsFillMoonFill onClick={toogleMode} />
               ) : (
