@@ -43,12 +43,12 @@ const SignIn = () => {
           </p>
         ) : (
           <>
-            <section class={`${ mode === "light" ? "bg-[#eaf4fc]" : "bg-black"}`}>
+            <section class={`${ mode === "light" ? "bg-[#eaf4fc]" : "bg-black "}`}>
               <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
-                <a class={`flex items-center  text-4xl mb-6 font-bold text-[#99eeb4] ${ mode === "light" ? "text-black" : 'text-[#99eeb4]'} italic`}> 
+                <a class={`flex items-center  text-4xl mb-16 font-bold text-[#99eeb4] ${ mode === "light" ? "text-black" : 'text-[#99eeb4]'} italic`}> 
                   Tradify
                 </a>
-                <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 ">
                   <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                     <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                       Sign in to your account
