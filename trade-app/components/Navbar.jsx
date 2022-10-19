@@ -23,7 +23,7 @@ const Navbar = () => {
           px-4
           md:p-4
           text-lg 
-          bg-[#98FB98]
+          bg-[#00FF7F]
         "
       >
         <div>
@@ -70,6 +70,7 @@ const Navbar = () => {
               md:pt-0
               font-semibold
               cursor-pointer
+              italic
               "
           >
             <li className="hover:text-[#004953]">
