@@ -37,10 +37,14 @@ const SignIn = () => {
     <div>
       <div>
         {needsEmailVerification ? (
-          <p>
-            Please check your mailbox and follow the verification link to verify
-            your email.
-          </p>
+          <div className={`min-h-screen  flex justify-center items-center ${mode === "light" ? "bg-[#eaf4fc]" : "bg-black text-white"}`}>
+          <div className="p-4 ">
+            <p className="text-xs md:text-2xl">
+              Please check your mailbox and follow the verification link to
+              verify your email.
+            </p>
+          </div>
+        </div>
         ) : (
           <>
             <section className={`${ mode === "light" ? "bg-[#eaf4fc]" : "bg-black "}`}>

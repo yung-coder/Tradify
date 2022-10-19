@@ -46,16 +46,24 @@ const SignUp = () => {
     <div>
       <div>
         {needsEmailVerification ? (
-          <p>
-            Please check your mailbox and follow the verification link to verify
-            your email.
-          </p>
+          <div className={`min-h-screen  flex justify-center items-center ${mode === "light" ? "bg-[#eaf4fc]" : "bg-black text-white"}`}>
+            <div className="p-4 ">
+              <p className="text-xs md:text-2xl">
+                Please check your mailbox and follow the verification link to
+                verify your email.
+              </p>
+            </div>
+          </div>
         ) : (
-          <section className={` ${ mode === "light" ? "bg-[#eaf4fc]" : "bg-black"}`}>
+          <section
+            className={` ${mode === "light" ? "bg-[#eaf4fc]" : "bg-black"}`}
+          >
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
               <a
                 href="#"
-                className={`flex items-center mb-6 text-3xl font-semibold ${ mode === "light" ? "text-black" : 'text-[#99eeb4]'} italic`}
+                className={`flex items-center mb-6 text-3xl font-semibold ${
+                  mode === "light" ? "text-black" : "text-[#99eeb4]"
+                } italic`}
               >
                 Tradify
               </a>
@@ -64,7 +72,11 @@ const SignUp = () => {
                   <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                     Create account
                   </h1>
-                  <form className="space-y-4 md:space-y-6" action="#"  onSubmit={handleOnSubmit}>
+                  <form
+                    className="space-y-4 md:space-y-6"
+                    action="#"
+                    onSubmit={handleOnSubmit}
+                  >
                     <div>
                       <label
                         for="name"
@@ -159,7 +171,7 @@ const SignUp = () => {
             </div>
           </section>
         )}
-         {isError ? <p> {error?.message}</p> : null}
+        {isError ? <p> {error?.message}</p> : null}
       </div>
     </div>
   );
