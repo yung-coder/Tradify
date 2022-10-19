@@ -33,7 +33,6 @@ const AppContext = ({ children }) => {
       `https://newsdata.io/api/1/news?apikey=pub_11954a4c7647fd461e2c81c73dbfccf3b18c8&q=crypto&language=en&category=business`,
       {}
     ).then((response) => {
-      console.log(response.data);
       setNews(response.data.results);
     });
   };
@@ -42,7 +41,6 @@ const AppContext = ({ children }) => {
       `https://newsdata.io/api/1/news?apikey=pub_11954a4c7647fd461e2c81c73dbfccf3b18c8&q=stock&language=en&category=business`,
       {}
     ).then((response) => {
-      console.log(response.data);
       setNews(response.data.results);
     });
   };
@@ -52,7 +50,6 @@ const AppContext = ({ children }) => {
       `https://financialmodelingprep.com/api/v3/stock_market/gainers?apikey=90171db29ef4387ad340b2f435c8325b`,
       {}
     ).then((response) => {
-      console.log(response.data);
       setstocks(response.data);
     });
   };
@@ -62,7 +59,6 @@ const AppContext = ({ children }) => {
       `https://financialmodelingprep.com/api/v3/search-name?query=${company}&limit=10&exchange=${exchange}&apikey=90171db29ef4387ad340b2f435c8325b`,
       {}
     ).then((response) => {
-      console.log(response.data);
       setsearchres(response.data);
       setchange(true);
     });
@@ -75,7 +71,6 @@ const AppContext = ({ children }) => {
     axios(
       `https://financialmodelingprep.com/api/v3/profile/${slug}?apikey=90171db29ef4387ad340b2f435c8325b`,
     ).then((response) => {
-      console.log(response.data)
       setdetails(response.data);
     });
   }

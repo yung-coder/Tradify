@@ -28,9 +28,6 @@ const Navbar = () => {
       >
         <div>
           <div className="flex justify-center items-center space-x-5">
-            {/* <div className="h-12 w-12">
-              <Image src={logo} className="rounded-full"></Image>
-            </div> */}
             <h1 className="italic font-bold">Tradify</h1>
           </div>
         </div>

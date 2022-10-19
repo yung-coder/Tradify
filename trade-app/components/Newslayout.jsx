@@ -9,7 +9,7 @@ const Newslayout = () => {
     <div>
       <Link href="/CryptoTracker">
         <div
-          class={`w-52  ${
+          className={`w-52  ${
             mode === "light" ? "bg-black" : "bg-gray-200"
           } p-5 rounded-2xl drop-shadow-2xl hover:shadow-2xl hover:shadow-blue-700`}
         >

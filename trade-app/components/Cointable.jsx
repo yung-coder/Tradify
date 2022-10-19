@@ -34,7 +34,6 @@ const Cointable = () => {
     fetchCoins();
   }, [currency]);
 
-  // console.log(coins);
 
   return (
     <>

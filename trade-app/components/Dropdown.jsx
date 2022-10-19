@@ -4,8 +4,7 @@ import { CryptoState } from "../AppContext";
 const Dropdown = () => {
   const [drop, setdrop] = useState(false);
   const {currency , setcurrency} = CryptoState()
-
-  console.log(currency);
+  
   return (
     <nav className="p-4  bg-slate-700 md:p-2">
         <div className="w-full md:block md:w-auto" id="mobile-menu">
