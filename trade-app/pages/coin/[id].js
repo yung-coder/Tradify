@@ -24,8 +24,6 @@ const Post = () => {
     fetchcoin();
   }, []);
 
-  console.log(coin);
-
   if (!coin) {
     return (
       <div className="min-h-screen flex justify-center items-center">
