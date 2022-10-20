@@ -7,7 +7,7 @@ const Newslayout = () => {
   const { mode } = CryptoState();
   return (
     <div>
-      <Link href="/CryptoTracker">
+      <Link href="/News">
         <div
           className={`w-52  ${
             mode === "light" ? "bg-black" : "bg-gray-200"
